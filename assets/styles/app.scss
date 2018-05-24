@@ -1,0 +1,47 @@
+
+@import "../vendor/bootstrap.min.css";
+@import "../vendor/nouislider.min.css";
+@import "../vendor/owl.carousel.min.css";
+@import "../vendor/jquery.fullpage.min.css";
+@import "../vendor/selectize.default.css";
+
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+    zoom: 1;
+  }
+}
+
+@function dpx($num) {
+  @return $num / 1920 * 100vw;
+}
+@function mpx($num) {
+  @return $num / 320 * 100vw;
+}
+
+// Seting font to just 'Ubuntu' and changing font-weight doesn't work in Linux (Win/MacOS haven't tested)
+@mixin ubuntu-light {
+  font-family: 'Ubuntu Light', 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+@mixin ubuntu-regular {
+  font-family: 'Ubuntu Regular', 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+@mixin ubuntu-medium {
+  font-family: 'Ubuntu Medium', 'Ubuntu', sans-serif;
+  font-weight: 500;
+}
+@mixin ubuntu-bold {
+  font-family: 'Ubuntu Bold', 'Ubuntu', sans-serif;
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import "desktop";
+@import "mobile";

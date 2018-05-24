@@ -1,0 +1,874 @@
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+
+  body {
+    display: block;
+    width: 100%;
+    min-width: 1200px;
+    font-size: 16px;
+    position: relative;
+    color: #242424;
+    background: #f9f9f9;
+    @include ubuntu-regular();
+  }
+
+  .block-container {
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+  }
+
+  .block-title-underlined {
+    font-size: 30px;
+    @include ubuntu-bold();
+    text-align: center;
+    position: relative;
+    padding-bottom: 24px;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100px;
+      height: 6px;
+      background: #8133bf;
+      background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+      margin-left: -50px;
+      border-radius: 6px;
+    }
+  }
+
+  #top-block {
+    padding-top: 128px;
+    background: url('../img/top-block-bg.jpg') no-repeat center top;
+    background-size: cover;
+    min-height: 867px;
+    
+    .top-block-container {
+      padding: 0 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .top-block-left {
+      flex: 1 0 auto;
+      padding-top: 80px;
+      
+      .title-colibri {
+        display: block;
+        color: #1b80dc;
+        font-size: 30px;
+        @include ubuntu-bold();
+        margin-bottom: 20px;
+        position: relative;
+
+        &:hover {
+          text-decoration: none;
+        }
+        
+        img {
+          position: absolute;
+          top: -58px;
+          left: -60px;
+        }
+      }
+      .title-big {
+        width: 520px;
+        font-size: 48px;
+        line-height: 50px;
+        @include ubuntu-bold();
+        margin-bottom: 30px;
+      }
+      .description {
+        width: 450px;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    .signup-form {
+      flex: 0 1 auto;
+      width: 430px;
+      padding: 32px 30px 22px;
+      border-radius: 3px;
+      background: #fff;
+      
+      .form-title {
+        color: #1a7fdc;
+        font-size: 24px;
+        line-height: 28px;
+        @include ubuntu-light();
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .input-wrap {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+        
+        input {
+          display: block;
+          width: 100%;
+          height: 50px;
+          padding: 0 18px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #bcc0c4;
+          border-radius: 3px;
+          background-color: #fff;
+          font-size: 15px;
+          
+          &::placeholder {
+            color: #8f9c9e;
+          }
+        }
+      }
+      .password-input-wrap {
+        position: relative;
+      }
+      .password-show {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        text-align: center;
+        cursor: pointer;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+        }
+      }
+      .password-complexity {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        
+        &[data-password-complexity=bad] {
+          .password-complexity-bar:nth-of-type(1) {
+            background: #ff8d8d;
+          }
+        }
+        &[data-password-complexity=moderate] {
+          .password-complexity-bar:nth-of-type(1),
+          .password-complexity-bar:nth-of-type(2) {
+            background: #ffea8d;
+          }
+        }
+        &[data-password-complexity=good] {
+          .password-complexity-bar:nth-of-type(1),
+          .password-complexity-bar:nth-of-type(2),
+          .password-complexity-bar:nth-of-type(3) {
+            background: #9eff8d;
+          }
+        }
+      }
+      .password-complexity-bar {
+        display: block;
+        width: 116px;
+        height: 5px;
+        border-radius: 5px;
+        background: #e0e2e5;
+      }
+      .password-hint {
+        font-size: 15px;
+        line-height: 20px;
+        color: #8f9c9e;
+        margin-bottom: 25px;
+      }
+      .submit {
+        display: block;
+        width: 100%;
+        height: 50px;
+        border-radius: 25px;
+        background: #9e44c0;
+        background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 20px;
+        @include ubuntu-bold();
+      }
+      .log-in {
+        font-size: 15px;
+        color: #8f9c9e;
+        text-align: center;
+        
+        a {
+          color: #00b0e7;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  #advantages-block {
+    margin-top: -168px;
+    padding-bottom: 125px;
+    
+    .advantages-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 50px;
+    }
+    .advantages-item {
+      flex: 0 1 auto;
+      width: 270px;
+      text-align: center;
+    }
+    .advantages-item__icon {
+      margin-bottom: 12px;
+      
+      img {
+        display: inline-block;
+      }
+    }
+    .advantages-item__text {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    
+  }
+
+  #clients-block {
+    padding-top: 90px;
+    padding-bottom: 65px;
+    background: #f9f9f9 url('../img/clients-block-bg.jpg') no-repeat center top;
+    background-size: cover;
+    
+    .clients-items {
+      margin-top: 60px;
+      
+      .owl-dots {
+        display: block;
+        height: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 26px;
+        margin-bottom: 26px;
+        
+        .owl-dot {
+          display: block;
+          height: 24px;
+          width: 24px;
+          line-height: 24px;
+          text-align: center;
+          cursor: pointer;
+          margin: 0 5px;
+          
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            background: #dfe1e3;
+            width: 12px;
+            height: 12px;
+            border-radius: 12px;
+          }
+          
+          &.active {
+            span {
+              background: #b1b6ba;
+            }
+          }
+        }
+      }
+    }
+    .clients-items-block {
+      display: flex;
+      flex-direction: row;
+    }
+    .clients-items-col {
+      padding: 5px 5px;
+    }
+    .clients-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 290px;
+      height: 130px;
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0px 4px 8px 0px rgba(#0d2748, 0.08);
+      margin-bottom: 10px;
+      
+      img {
+        flex: 0 1 auto;
+        width: auto;
+        height: auto;
+      }
+    }
+    .subtitle {
+      font-size: 24px;
+      @include ubuntu-bold();
+      text-align: center;
+      margin-bottom: 5px;
+      
+      .blue {
+        color: #00a7e9;
+      }
+    }
+    .subtext {
+      font-size: 18px;
+      text-align: center;
+      
+      .blue {
+        color: #00a7e9;
+        @include ubuntu-bold();
+      }
+    }
+    
+  }
+
+  #features-block {
+    padding-top: 135px;
+    background: url('../img/features-block-bg.jpg') no-repeat center top;
+    background-size: cover;
+    height: 1120px;
+
+    .block-title-underlined {
+      text-align: left;
+      
+      &::after {
+        left: 0;
+        margin-left: 0;
+      }
+    }
+    
+    .features-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      width: 800px;
+      height: 400px;
+      margin-top: 55px;
+      margin-bottom: 140px;
+    }
+    .features-item {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      height: 80px;
+      width: 370px;
+      margin-bottom: 50px;
+    }
+    .features-item__image {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      margin-right: 30px;
+      
+      img {
+        flex: 0 0 auto;
+        width: auto;
+        height: auto;
+      }
+    }
+    .features-item__text {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    
+    .contact-us-block-wrap {
+      width: 100%;
+      position: relative;
+      
+    }
+    .contact-us-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-radius: 3px;
+      background: #0092e5;
+      background: linear-gradient(to right, #00a7eb 0%, #007fe0 100%);
+      box-shadow: 0px 4px 8px 0px rgba(13, 39, 72, 0.08);
+      padding: 50px 50px 30px;
+      color: #fff;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    .contact-us-block-left {
+      flex: 1 0 auto;
+    }
+    .contact-us__title {
+      font-size: 30px;
+      @include ubuntu-bold();
+      position: relative;
+      padding-bottom: 24px;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 6px;
+        background: #fff;
+        margin-left: 0;
+        border-radius: 6px;
+      }
+    }
+    .contact-us__selector {
+      margin-top: 40px;
+      
+      a {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 20px;
+        opacity: 0.5;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+          margin-left: 10px;
+          margin-bottom: 2px;
+        }
+        
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+    .contact-us-form {
+      width: 770px;
+    }
+    .contact-us-form-col {
+      flex: 0 0 auto;
+      width: 370px;
+    }
+    .contact-us-form-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      
+      .captcha {
+        width: 180px;
+        height: 50px;
+        background: #fff url('../img/captcha.png') no-repeat center center;
+        border-radius: 3px;
+      }
+      input {
+        display: block;
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        border: 1px solid #fff;
+        outline: none;
+        border-radius: 3px;
+        color: #fff;
+        padding: 0 16px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        
+        &::placeholder {
+          color: #fff;
+        }
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        height: 120px;
+        background: transparent;
+        border: 1px solid #fff;
+        outline: none;
+        border-radius: 3px;
+        color: #fff;
+        padding: 10px 16px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        
+        &::placeholder {
+          color: #fff;
+        }
+      }
+      button {
+        display: block;
+        width: 100%;
+        height: 50px;
+        background: #fff;
+        color: #01b1ec;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        @include ubuntu-bold();
+        font-size: 18px;
+        cursor: pointer;
+      }
+      
+      &.with-captcha {
+        input {
+          width: 180px;
+        }
+      }
+    }
+  }
+
+  #pricing-block {
+    padding-top: 64px;
+    
+    .pricing-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 50px;
+      margin-bottom: 90px;
+    }
+    .pricing-item {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      box-shadow: 0px 4px 8px 0px rgba(13, 39, 72, 0.08);
+      width: 570px;
+      height: 230px;
+      border-radius: 3px;
+      color: #fff;
+      padding: 20px;
+      
+      &.pricing-item-blue {
+        background-image: linear-gradient(to right, #197edc 0%, #45a5e8 100%);
+      }
+      &.pricing-item-pink {
+        background-image: linear-gradient(to right, #b953c2 0%, #8133bf 100%);
+      }
+      
+      .pricing-item__image {
+        width: 175px;
+        text-align: center;
+        flex: 0 0 auto;
+        margin-right: 15px;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+        }
+      }
+      .pricing-item__text {
+        font-size: 18px;
+        flex: 1 0 0;
+        max-width: 320px;
+      }
+      .pricing-item__title {
+        @include ubuntu-bold();
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  #footer {
+    min-height: 263px;
+    background: #fff;
+    padding-top: 70px;
+    padding-bottom: 25px;
+    
+    & > .block-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    
+    .footer-nav {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 600px;
+    }
+    .footer-nav-left {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+    }
+    .footer-nav-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-nav-item {
+      font-size: 18px;
+      color: rgba(#242424, 0.5);
+      margin-right: 40px;
+      margin-bottom: 15px;
+    }
+    .footer-nav-right {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+    }
+    .footer-right {
+      flex: 0 0 auto;
+      width: 470px;
+    }
+    .footer-subscribe {
+      width: 100%;
+      position: relative;
+      margin-bottom: 30px;
+      
+      input {
+        display: block;
+        width: 100%;
+        background: #fff;
+        height: 50px;
+        line-height: 50px;
+        color: #505657;
+        border-radius: 25px;
+        border: 1px solid #8f9c9e;
+        padding: 0 20px;
+        
+        &::placeholder {
+          color: #8f9c9e;
+        }
+      }
+      
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50px;
+        width: 170px;
+        font-size: 18px;
+        @include ubuntu-bold();
+        color: #fff;
+        border: none;
+        background: #9e44c0;
+        background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+        border-radius: 25px;
+        cursor: pointer;
+      }
+    }
+    .footer-links {
+      color: #1a80dc;
+      margin-bottom: 30px;
+      
+      a {
+        color: #1a80dc;
+      }
+    }
+    .footer-link-separator {
+      display: inline-block;
+      margin: 0 40px;
+    }
+    .footer-socials {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    .footer-social {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 44px;
+      font-size: 15px;
+      color: #8f9c9e;
+      border-radius: 22px;
+      border: 1px solid #8f9c9e;
+      margin-right: 20px;
+      padding: 0 20px;
+      
+      &:hover {
+        text-decoration: none;
+      }
+      
+      img {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  #faq-block {
+    padding-top: 30px;
+    background: url('../img/faq-bg.jpg') no-repeat center top;
+    background-size: cover;
+     min-height: 740px;
+    
+    .title-colibri {
+      display: block;
+      color: #1b80dc;
+      font-size: 30px;
+      @include ubuntu-bold();
+      margin-top: 40px;
+      margin-bottom: 20px;
+      position: relative;
+      
+      &:hover {
+        text-decoration: none;
+      }
+      
+      img {
+        position: absolute;
+        top: -58px;
+        left: -60px;
+      }
+    }
+    .title-big {
+      width: 520px;
+      font-size: 48px;
+      line-height: 50px;
+      @include ubuntu-bold();
+      margin-bottom: 30px;
+    }
+    
+    .search-form {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      
+      .search-input-wrap {
+        width: 370px;
+        margin-right: 30px;
+        position: relative;
+        
+        input {
+          display: block;
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+          background: #fff;
+          font-size: 15px;
+          color: #8f9c9e;
+          padding: 0 20px;
+          border-radius: 3px;
+          border: none;
+          outline: none;
+        }
+      }
+      
+      button {
+        display: block;
+        width: 170px;
+        height: 50px;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        background: #9e44c0;
+        background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+        color: #fff;
+        font-size: 18px;
+        @include ubuntu-bold();
+        cursor: pointer;
+      }
+    }
+    .search-img {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      display: block;
+      cursor: pointer;
+      
+      img {
+        display: inline-block;
+        width: auto;
+        height: auto;
+      }
+    }
+    .faq-items {
+      margin-bottom: 90px;
+    }
+    .faq-item {
+      width: 100%;
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0px 4px 8px 0px rgba(13, 39, 72, 0.08);
+      padding: 0 20px;
+      margin-bottom: 20px;
+      
+      &.expanded {
+        .faq-item-header {
+          .expand {
+            display: none;
+          }
+          .collapse {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .faq-item-header {
+      font-size: 24px;
+      padding: 12px 0;
+      padding-right: 40px;
+      position: relative;
+      cursor: pointer;
+      @include ubuntu-bold();
+      
+      .toggle {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        text-align: center;
+        margin-top: -20px;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+        }
+      }
+      .expand {
+        display: inline-block;
+      }
+      .collapse {
+        display: none;
+      }
+    }
+    .faq-item-body {
+      display: none;
+      border-top: 1px solid #dddddd;
+      font-size: 18px;
+      padding: 20px 0;
+      
+      .image {
+        float: left;
+        margin-right: 20px;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          width: 32px;
+          height: 32px;
+          background: url('../img/zoom.png') no-repeat center center;
+          cursor: pointer;
+        }
+      }
+      
+      &::after {
+        content: '';
+        clear: both;
+        display: table;
+      }
+    }
+  }
+}

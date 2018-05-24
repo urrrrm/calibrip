@@ -1,0 +1,980 @@
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  body {
+    display: block;
+    width: 100%;
+    min-width: 320px;
+    font-size: 16px;
+    position: relative;
+    color: #242424;
+    background: #f9f9f9;
+    @include ubuntu-regular();
+  }
+  
+  .block-container {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    position: relative;
+  }
+
+  .block-title-underlined {
+    font-size: 24px;
+    @include ubuntu-bold();
+    text-align: center;
+    position: relative;
+    padding-bottom: 14px;
+    color: #242424;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100px;
+      height: 4px;
+      background: #8133bf;
+      background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+      margin-left: -50px;
+      border-radius: 4px;
+    }
+    
+    &.block-title-underlined-left {
+      text-align: left;
+      
+      &::after {
+        left: 0;
+        margin-left: 0;
+      }
+    }
+  }
+
+  #nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    z-index: 20;
+    background: rgba(#2a8de1, 0.9);
+    transition: background-color 0.3s ease;
+
+    &.top {
+      background: transparent;
+    }
+
+    .title {
+      font-size: 18px;
+      color: #fff;
+      @include ubuntu-medium;
+    }
+    .icons {
+      display: flex;
+      flex-direction: row;
+
+      .icon {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & + .icon {
+          margin-left: 20px;
+        }
+        &.menu-authorize {
+          svg {
+            width: 32px;
+          }
+        }
+        &.menu-toggle {
+          svg {
+            width: 36px;
+          }
+        }
+      }
+    }
+  }
+
+  body.nav-menu-open {
+    overflow: hidden;
+
+    #nav-menu {
+      transform: translateX(100%);
+    }
+  }
+
+  #nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: #2a8de1;
+    transition: transform 0.3s ease;
+
+    .menu-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+
+      .title {
+        font-size: 18px;
+        color: #fff;
+        @include ubuntu-medium;
+      }
+      .icons {
+        display: flex;
+        flex-direction: row;
+
+        .icon {
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          & + .icon {
+            margin-left: 20px;
+          }
+          &.menu-authorize {
+            svg {
+              width: 32px;
+            }
+          }
+          &.menu-close {
+            svg {
+              width: 32px;
+            }
+          }
+        }
+      }
+    }
+    .menu-items {
+      margin-top: 30px;
+      text-align: center;
+
+      .menu-item {
+        display: block;
+        margin-bottom: 2px;
+
+        a {
+          display: inline-block;
+          font-size: 16px;
+          color: #fff;
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  #top-block {
+    padding-top: 72px;
+    padding-bottom: 10px;
+    background: url('../img/top-block-bg-m.jpg') no-repeat center top;
+    background-size: 100% auto;
+    
+    .top-block-container {
+
+    }
+    .top-block-left {
+      padding: 0 10px;
+      
+      .title-colibri {
+        display: none;
+      }
+      .title-big {
+        font-size: 36px;
+        line-height: 42px;
+        @include ubuntu-bold();
+        margin-bottom: 8px;
+        color: #fff;
+      }
+      .description {
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        margin-bottom: 24px;
+      }
+    }
+    .signup-form {
+      width: 100%;
+      padding: 20px 10px 30px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0px 4px 8px 0px rgba(13, 39, 72, 0.08);
+      
+      .form-title {
+        color: #1a7fdc;
+        font-size: 18px;
+        line-height: 20px;
+        @include ubuntu-medium();
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .input-wrap {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+        position: relative;
+        
+        input {
+          display: block;
+          width: 100%;
+          height: 42px;
+          padding: 0 15px;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #7d7d7d;
+          border-radius: 3px;
+          background-color: #fff;
+          font-size: 15px;
+          
+          &::placeholder {
+            color: #7d7d7d;
+          }
+        }
+      }
+      .password-input-wrap {
+        position: relative;
+      }
+      .password-show {
+        position: absolute;
+        top: 7px;
+        right: 12px;
+        text-align: center;
+        cursor: pointer;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+        }
+      }
+      .password-complexity {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        
+        &[data-password-complexity=bad] {
+          .password-complexity-bar:nth-of-type(1) {
+            background: #ff8d8d;
+          }
+        }
+        &[data-password-complexity=moderate] {
+          .password-complexity-bar:nth-of-type(1),
+          .password-complexity-bar:nth-of-type(2) {
+            background: #ffea8d;
+          }
+        }
+        &[data-password-complexity=good] {
+          .password-complexity-bar:nth-of-type(1),
+          .password-complexity-bar:nth-of-type(2),
+          .password-complexity-bar:nth-of-type(3) {
+            background: #9eff8d;
+          }
+        }
+      }
+      .password-complexity-bar {
+        display: block;
+        width: 32%;
+        height: 5px;
+        border-radius: 5px;
+        background: #e0e2e5;
+      }
+      .password-hint {
+        font-size: 14px;
+        line-height: 20px;
+        color: #1b1b1b;
+        @include ubuntu-light();
+        margin-bottom: 25px;
+      }
+      .submit {
+        display: block;
+        width: 100%;
+        height: 50px;
+        border-radius: 20px;
+        background: #9e44c0;
+        background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 20px;
+        @include ubuntu-bold();
+      }
+      .log-in {
+        font-size: 16px;
+        color: #727272;
+        text-align: center;
+        
+        a {
+          color: #00b0e7;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  #advantages-block {
+    padding-top: 64px;
+    padding-bottom: 42px;
+    
+    .advantages-items {
+      margin-top: 50px;
+    }
+    .advantages-item {
+      width: 270px;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .advantages-item__icon {
+      margin-bottom: 12px;
+      
+      img {
+        display: inline-block;
+      }
+    }
+    .advantages-item__text {
+      font-size: 18px;
+      line-height: 22px;
+      color: #242424;
+    }
+  }
+
+  #clients-block {
+    padding-top: 68px;
+    padding-bottom: 24px;
+    background: #fdfdfd url('../img/clients-block-bg-m.jpg') no-repeat center top;
+    background-size: 100% auto;
+
+    .clients-items-and-titles {
+      display: flex;
+      flex-direction: column;
+    }
+    .clients-items {
+      margin-top: 50px;
+      order: 2;
+      
+      .owl-dots {
+        display: block;
+        height: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 26px;
+        margin-bottom: 26px;
+        
+        .owl-dot {
+          display: block;
+          height: 24px;
+          width: 24px;
+          line-height: 24px;
+          text-align: center;
+          cursor: pointer;
+          margin: 0 5px;
+          
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            background: #dfe1e3;
+            width: 12px;
+            height: 12px;
+            border-radius: 12px;
+          }
+          
+          &.active {
+            span {
+              background: #b1b6ba;
+            }
+          }
+        }
+      }
+    }
+    .clients-items-block {
+      display: block;
+    }
+    .clients-items-col {
+      padding: 5px 5px;
+    }
+    .clients-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: mpx(140);
+      height: mpx(64);
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0px 4px 8px 0px rgba(#0d2748, 0.08);
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      
+      img {
+        flex: 0 1 auto;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .clients-titles {
+      order: 1;
+      margin-top: 40px;
+    }
+    .subtitle {
+      font-size: 22px;
+      @include ubuntu-bold();
+      text-align: center;
+      margin-bottom: 5px;
+      line-height: 1.3;
+      
+      .blue {
+        color: #00a7e9;
+      }
+    }
+    .subtext {
+      font-size: 16px;
+      text-align: center;
+      line-height: 1.3;
+      padding: 0 30px;
+      
+      .blue {
+        color: #00a7e9;
+        @include ubuntu-bold();
+      }
+    }
+    
+  }
+
+  #features-block {
+    padding-top: 70px;
+    
+    .features-block-title {
+      position: relative;
+      display: inline-block;
+
+      img {
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: auto;
+        height: auto;
+      }
+    }
+    .features-items {
+      width: 100%;
+      margin-top: 55px;
+      margin-bottom: 70px;
+    }
+    .features-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+      margin-bottom: 50px;
+      padding: 0 10px;
+    }
+    .features-item__image {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      margin-right: 20px;
+      
+      img {
+        flex: 0 0 auto;
+        width: auto;
+        height: auto;
+      }
+    }
+    .features-item__text {
+      font-size: 18px;
+      line-height: 20px;
+      color: #242424;
+
+      br {
+        display: none;
+      }
+    }
+    
+    .contact-us-container {
+      padding: 0;
+    }
+    .contact-us-block-wrap {
+      width: 100%;
+      position: relative;
+    }
+    .contact-us-block {
+      width: 100%;
+      background: #2387df;
+      box-shadow: 0px 4px 8px 0px rgba(13, 39, 72, 0.08);
+      padding: 45px 20px 35px;
+      color: #fff;
+    }
+    .contact-us-block-left {
+      
+    }
+    .contact-us__title {
+      font-size: 24px;
+      @include ubuntu-bold();
+      position: relative;
+      padding-bottom: 12px;
+      text-align: center;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100px;
+        height: 4px;
+        background: #fff;
+        margin-left: -50px;
+        border-radius: 4px;
+      }
+    }
+    .contact-us__selector {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding: 0 10px;
+      
+      a {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        line-height: 20px;
+        opacity: 0.5;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+          margin-left: 6px;
+          margin-bottom: 2px;
+        }
+        
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+    .contact-us-form {
+      width: 100%;
+    }
+    .contact-us-form-col {
+      width: 100%;
+    }
+    .contact-us-form-row {
+      width: 100%;
+      
+      input {
+        display: block;
+        width: 100%;
+        height: 42px;
+        background: transparent;
+        border: 1px solid #fff;
+        outline: none;
+        border-radius: 3px;
+        color: #fff;
+        padding: 0 15px;
+        font-size: 16px;
+        margin-bottom: 12px;
+        
+        &::placeholder {
+          color: #fff;
+        }
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        height: 160px;
+        background: transparent;
+        border: 1px solid #fff;
+        outline: none;
+        border-radius: 3px;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 16px;
+        margin-bottom: 12px;
+        
+        &::placeholder {
+          color: #fff;
+        }
+      }
+      button {
+        display: block;
+        width: 100%;
+        height: 50px;
+        background: #fff;
+        color: #01b1ec;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        @include ubuntu-bold();
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      
+      &.with-captcha {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        input {
+          width: 48%;
+        }
+        .captcha {
+          width: 48%;
+          height: 42px;
+          background: #fff url('../img/captcha.png') no-repeat center center;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+
+  #pricing-block {
+    padding-top: 64px;
+    
+    .pricing-items {
+      margin-top: 50px;
+    }
+    .pricing-item {
+      box-shadow: 0px 4px 8px 0px rgba(13, 39, 72, 0.08);
+      width: 100%;
+      border-radius: 3px;
+      color: #fff;
+      padding: 30px 10px;
+      text-align: center;
+      margin-bottom: 10px;
+      
+      &.pricing-item-blue {
+        background-image: linear-gradient(to right, #197edc 0%, #45a5e8 100%);
+      }
+      &.pricing-item-pink {
+        background-image: linear-gradient(to right, #b953c2 0%, #8133bf 100%);
+      }
+      
+      .pricing-item__image {
+        width: 80px;
+        margin: 0 auto 20px;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+        }
+      }
+      .pricing-item__text {
+        font-size: 16px;
+        line-height: 1.25;
+      }
+      .pricing-item__title {
+        @include ubuntu-bold();
+        font-size: 20px;
+        margin-bottom: 12px;
+        line-height: 1.25;
+      }
+    }
+  }
+
+  #footer {
+    background: #fff;
+    padding-top: 70px;
+    padding-bottom: 25px;
+
+    .block-description {
+      font-size: 16px;
+      color: #242424;
+      text-align: center;
+      line-height: 1.25;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .footer-right {
+
+    }
+    .footer-subscribe {
+      position: relative;
+      margin-bottom: 30px;
+      
+      input {
+        display: block;
+        width: 100%;
+        background: #fff;
+        height: 48px;
+        line-height: 48px;
+        color: #505657;
+        border-radius: 25px;
+        border: 1px solid #8f9c9e;
+        outline: none;
+        padding: 0 15px;
+        text-align: center;
+        margin-bottom: 15px;
+        
+        &::placeholder {
+          color: #8f9c9e;
+        }
+      }
+      
+      button {
+        display: block;
+        height: 50px;
+        width: 100%;
+        font-size: 18px;
+        @include ubuntu-bold();
+        color: #fff;
+        border: none;
+        background: #9e44c0;
+        background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+        border-radius: 25px;
+        cursor: pointer;
+      }
+    }
+    .footer-links {
+      color: #1a80dc;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      a {
+        display: inline-block;
+        font-size: 18px;
+        color: #1a80dc;
+        text-align: center;
+      }
+    }
+    .footer-link-separator {
+      display: none;
+    }
+    .footer-socials {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0 15px;
+    }
+    .footer-social {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 44px;
+      font-size: 15px;
+      color: #8f9c9e;
+      border-radius: 22px;
+      border: 1px solid #8f9c9e;
+      padding: 0 20px;
+      
+      & + .footer-social {
+        margin-left: 35px;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+      
+      img {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  body.faq-page {
+    background: #ffffff url('../img/faq-bg-m.jpg') no-repeat center top;
+    background-size: 100% auto;
+
+    #footer {
+      background: transparent;
+    }
+  }
+
+  #faq-block {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    
+    .title-colibri {
+      color: #1b80dc;
+      font-size: 30px;
+      @include ubuntu-bold();
+      margin-top: 40px;
+      margin-bottom: 20px;
+      position: relative;
+      
+      img {
+        position: absolute;
+        top: -58px;
+        left: -60px;
+      }
+    }
+    .title-big {
+      color: #fff;
+      font-size: 36px;
+      line-height: 42px;
+      @include ubuntu-bold();
+      margin-bottom: 30px;
+    }
+    
+    .search-form {
+      margin-bottom: 36px;
+      
+      .search-input-wrap {
+        width: 100%;
+        position: relative;
+        
+        input {
+          display: block;
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+          background: #fff;
+          font-size: 15px;
+          color: #8f9c9e;
+          padding: 0 20px;
+          border-radius: 3px;
+          border: none;
+          outline: none;
+        }
+      }
+      
+      button {
+        display: block;
+        width: 170px;
+        height: 50px;
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        background: #9e44c0;
+        background: linear-gradient(to right, #8133bf 0%, #b953c2 100%);
+        color: #fff;
+        font-size: 18px;
+        @include ubuntu-bold();
+        cursor: pointer;
+      }
+    }
+    .search-img {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      display: block;
+      cursor: pointer;
+      
+      img {
+        display: inline-block;
+        width: auto;
+        height: auto;
+      }
+    }
+    .faq-items {
+      
+    }
+    .faq-item {
+      width: 100%;
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0px 4px 8px 0px rgba(13, 39, 72, 0.08);
+      padding: 0 10px;
+      margin-bottom: 15px;
+      
+      &.expanded {
+        .faq-item-header {
+          color: #3899e5;
+
+          .expand {
+            display: none;
+          }
+          .collapse {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .faq-item-header {
+      font-size: 16px;
+      line-height: 20px;
+      color: #242424;
+      padding: 10px 0;
+      padding-right: 30px;
+      position: relative;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      @include ubuntu-medium();
+      
+      .toggle {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        text-align: center;
+        margin-top: -11px;
+        
+        img {
+          display: inline-block;
+          width: auto;
+          height: auto;
+        }
+      }
+      .expand {
+        display: inline-block;
+      }
+      .collapse {
+        display: none;
+      }
+    }
+    .faq-item-body {
+      display: none;
+      border-top: 1px solid #dddddd;
+      font-size: 16px;
+      padding: 10px 0;
+      @include ubuntu-light;
+      
+      .image {
+        max-width: 100%;
+        position: relative;
+        margin-bottom: 10px;
+
+        img {
+          max-width: 100%;
+        }
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          width: 32px;
+          height: 32px;
+          background: url('../img/zoom.png') no-repeat center center;
+          cursor: pointer;
+        }
+      }
+      
+      &::after {
+        content: '';
+        clear: both;
+        display: table;
+      }
+    }
+  }
+}
